@@ -9,29 +9,25 @@
     <script src="<?=base_url()?>js/jquery-2.1.1.js"></script>
     <script src="<?=base_url()?>js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(
-    	function()
+    $(document).ready(function()
+    {
+      $("#refresh_list").click(function()
     	{
-    		// alert("heh");
+        $.get("<?=site_url('welcome/show')?>",function(data, status)
+        {
+          $("#msg").html(data);
+        });
     	});
+
+      $("#refresh_list").click();
+    });
     </script>
   </head>
   <body>
     <h1>项目展示</h1>
-	<table class="table table-striped table-hover">
-        <tr>
-            <td>项目名称</td>
-            <td>项目来源</td>
-            <td>发布时间</td>
-          </tr>
-        <?php foreach($projects as $item):?>
-          <tr>
-            <td><?=$item->title?></td>
-            <td><?=$item->description?></td>
-            <td><?=$item->distime?></td>
-          </tr>
-        <?php endforeach; ?>
-    </table>
+    <a class="btn btn-default" id="refresh_list">刷新列表</a>
+	   <div id="msg">
+     </div>
     
   </body>
 </html>
