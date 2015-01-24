@@ -25,71 +25,73 @@
         });
         return true;
       });
+
+      $.get("<?=site_url('admin/show')?>",function(data, status)
+      {
+        $("#msg").html(data);
+      });
     });
     </script>
   </head>
   <body>
-  <a class="btn btn-default" data-toggle="modal" id="addForm" data-target="#addModal">添加信息</a>
+  <div class="container">
+    <div class="page-header">
+      <h1 class="text-center">项目发布平台-PIP <small>后台管理</small></h1>
+    </div>
+    <div class="col-sm-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a class="btn" href="<?=site_url('admin/index')?>" id="nav_tip">Overview</a></li>
+        <li role="presentation"><a class="btn btn-default" data-toggle="modal" id="addForm" data-target="#addModal">添加信息</a></li>
+      </ul>
+    </div>
 
-  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title">添加项目</h4>
-        </div>
-        <div class="modal-body">
-              <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputTitle" class="col-sm-3 control-label">项目名称</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" id="inputTitle">
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">添加项目</h4>
+          </div>
+          <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="inputTitle" class="col-sm-3 control-label">项目名称</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputTitle">
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputMoney" class="col-sm-3 control-label">项目金额</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" id="inputMoney">
+                    <div class="form-group">
+                      <label for="inputMoney" class="col-sm-3 control-label">项目金额</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputMoney">
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPeriod" class="col-sm-3 control-label">项目周期</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" id="inputPeriod">
+                    <div class="form-group">
+                      <label for="inputPeriod" class="col-sm-3 control-label">项目周期</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputPeriod">
+                      </div>
                     </div>
-                  </div>
-                   <div class="form-group">
-                    <label for="inputDescription" class="col-sm-3 control-label">描述</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control" id="inputDescription">
+                     <div class="form-group">
+                      <label for="inputDescription" class="col-sm-3 control-label">描述</label>
+                      <div class="col-sm-6">
+                        <textarea col="3" class="form-control" id="inputDescription"></textarea>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-2">
-                      <button type="submit" id="addRecord" class="btn btn-default">添加</button>
+                    <div class="form-group">
+                      <div class="col-sm-offset-3 col-sm-2">
+                        <button type="submit" id="addRecord" class="btn btn-default">添加</button>
+                      </div>
                     </div>
-                  </div>
-              </form>
+                </form>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="col-sm-8" id="msg">
+
+    </div>
   </div>
-
-  <?php foreach($project as $item): ?>
-    <li><?=$item->title?></li>
-  <?php endforeach; ?>
-  </ul>
-
-  <form action="<?=site_url('admin/remove')?>" method="post">
-  <input type="text" name="id">
-  <input type="submit">
-  </form>
-
-  <form action="<?=site_url('admin/modify')?>" method="post">
-  <input type="text" name="id">
-  <input type="text" name="which">
-  <input type="text" name="record">
-  <input type="submit">
-  </form>
   </body>
 </html>

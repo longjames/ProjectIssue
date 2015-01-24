@@ -3,10 +3,23 @@
 	{
 		public function index()
 		{
+			$this->load->view('admin/main');
+		}
+
+		public function show()
+		{
 			$this->load->model('project');
 			$res = $this->project->getAll();
 			$data['project'] = $res;
-			$this->load->view('admin/main',$data);
+			$this->load->view('admin/list',$data);
+		}
+
+		public function detail()
+		{
+			$this->load->model('project');
+			$id = $this->input->post('id');
+			$data['project'] = $this->project->getProjectById($id);
+			$this->load->view('admin/detail',$data);
 		}
 
 		public function add()
@@ -43,7 +56,6 @@
 			$which = $this->input->post('which');
 			$record = $this->input->post('record');
 			$id = $this->input->post('id');
-			echo $which, $record, $id;
 			$this->load->model('project');
 			if($this->project->modifyRecord($id, $record, $which))
 			{

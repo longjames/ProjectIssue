@@ -7,6 +7,11 @@
 			return $this->db->get('projects')->result();
 		}
 
+		public function getProjectById($id)
+		{
+			return $this->db->where('id',$id)->get('projects')->row();
+		}
+
 		public function addRecord($title, $money, $period, $description)
 		{
 			$bool = false;
