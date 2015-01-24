@@ -25,10 +25,13 @@
     </script>
   </head>
   <body>
-    <h1>项目展示</h1>
+    <div class="container">
+      <div class="page-header">
+        <h1 class="text-center">项目展示</h1>
+      </div>
     <a class="btn btn-default" id="refresh_list">刷新列表</a>
 	   <div id="msg">
      </div>
-    
+    </div>
   </body>
 </html>
