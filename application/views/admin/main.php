@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?=base_url()?>icon.png" rel="shortcut icon">
     <title>项目发布平台后台管理</title>
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
     <script src="<?=base_url()?>js/jquery-2.1.1.js"></script>
@@ -42,6 +43,7 @@
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a class="btn" href="<?=site_url('admin/index')?>" id="nav_tip">Overview</a></li>
         <li role="presentation"><a class="btn btn-default" data-toggle="modal" id="addForm" data-target="#addModal">添加信息</a></li>
+        <li><a class="btn btn-default" href="<?=site_url('backend/logout')?>">注销</a></li>
       </ul>
     </div>
 

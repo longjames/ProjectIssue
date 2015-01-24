@@ -16,7 +16,6 @@
 				{
 					if($item->name == $name)
 						$flag = 1;
-
 				}
 				if($flag == 0) 
 					redirect(site_url('backend/login','refresh'));
@@ -37,6 +36,16 @@
 			{
 				$this->load->view('admin/login');
 			}
+		}
+
+		public function logout()
+		{
+			$this->load->library('session');
+			if($this->session->userdata('token') == 'in')
+			{
+				$this->session->set_userdata('token','out');
+			}
+			redirect(site_url('backend/login'),'refresh');
 		}
 	}
 ?>

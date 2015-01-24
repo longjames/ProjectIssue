@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?=base_url()?>icon.png" rel="shortcut icon">
     <title>项目展示</title>
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
     <script src="<?=base_url()?>js/jquery-2.1.1.js"></script>

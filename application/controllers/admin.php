@@ -1,5 +1,5 @@
 <?php
-	class admin extends CI_Controller
+	class admin extends Admin_Controller
 	{
 		public function index()
 		{
