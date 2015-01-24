@@ -7,6 +7,7 @@
     <link href="<?=base_url()?>icon.png" rel="shortcut icon">
     <title>项目展示</title>
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>css/display.css" rel="stylesheet">
     <script src="<?=base_url()?>js/jquery-2.1.1.js"></script>
     <script src="<?=base_url()?>js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -42,13 +43,13 @@
       </div>
       <div>
         <div class="col-sm-1">
-          <a class="btn btn-default" id="refresh_list">项目列表</a>
+          <a class="btn btn-default" id="refresh_list">所有项目</a>
         </div>
         <div class="col-sm-2 col-sm-offset-9">
           <div class="input-group">
-            <input type="text" class="form-control" id="search_content" placeholder="search">
+            <input type="text" class="form-control" id="search_content" placeholder="keyword">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
+              <a class="btn btn-default" id="search_btn"><span class="glyphicon glyphicon-search"></span></a>
             </span>
           </div>
         </div>
@@ -56,7 +57,13 @@
         <br>
         <br>
       </div>
-  	  <div id="msg">
+      <div class="col-sm-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a class="btn" id="table_show">表格方式</a></li>
+          <li><a class="btn" id="indiv_show">模块方式</a></li>
+        </ul>
+      </div>
+  	  <div id="msg" class="col-sm-10">
       </div>
     </div>
   </body>

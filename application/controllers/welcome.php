@@ -22,8 +22,8 @@ class Welcome extends CI_Controller {
 		$projects = array();
 		foreach($res as $item)
 		{
-			//按照标题和描述筛选内容 分词等技术
-			if(true)
+			//按照标题和描述筛选内容
+			if(strstr($item->title, $content) || strstr($item->description, $content))
 			{
 				$projects[] = $item;
 			}

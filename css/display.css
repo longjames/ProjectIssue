@@ -1,0 +1,25 @@
+.post-item {
+	list-style-type: none;
+	font-family: Monospace;
+	margin-bottom: 10px;
+	margin-left: -2em;
+	padding: 1em;
+	background-color: azure;
+	border-radius:15px;
+	text-indent: 10px;
+}
+
+.post-item h4 {
+	color: red;
+	text-align: center;
+}
+
+.description {
+	text-indent: 1em;
+	margin-top: 1em;
+	color: purple;
+}
+
+.project_tag {
+	text-align: center;
+}
