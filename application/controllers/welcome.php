@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('project');
 		$res = $this->project->getAll();
-
+		$content = $this->input->post('content');
 		$projects = array();
 		foreach($res as $item)
 		{

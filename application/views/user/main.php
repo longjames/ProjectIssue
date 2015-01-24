@@ -21,6 +21,17 @@
     	});
 
       $("#refresh_list").click();
+
+      $("#search_btn").click(function() 
+      {
+        var data = {
+          content: $("#search_content").val(),
+        };
+        $.post("<?=site_url('welcome/search')?>", data, function(ret, status)
+        {
+          $("#msg").html(ret);
+        });
+      });
     });
     </script>
   </head>
@@ -29,9 +40,24 @@
       <div class="page-header">
         <h1 class="text-center">项目展示</h1>
       </div>
-    <a class="btn btn-default" id="refresh_list">刷新列表</a>
-	   <div id="msg">
-     </div>
+      <div>
+        <div class="col-sm-1">
+          <a class="btn btn-default" id="refresh_list">项目列表</a>
+        </div>
+        <div class="col-sm-2 col-sm-offset-9">
+          <div class="input-group">
+            <input type="text" class="form-control" id="search_content" placeholder="search">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" id="search_btn"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+      </div>
+  	  <div id="msg">
+      </div>
     </div>
   </body>
 </html>
