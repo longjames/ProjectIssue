@@ -24,7 +24,7 @@
 ![login](assets/login.png)
 
 总览
-![overview](assets/overviw.png)
+![overview](assets/overview.png)
 
 添加
 ![add](assets/add.png)
